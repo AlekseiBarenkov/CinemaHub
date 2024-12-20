@@ -15,8 +15,7 @@ export const ErrorBoundary: FC = () => {
 	const navigate = useNavigate();
 	const showMessage = useToastActionsContext().showMessage;
 	const error = useRouteError() as Error;
-	const { status, message } = services.getErrorInfo(error);
-	const limitExceeded = true;
+	const { status, message, limitExceeded } = services.getErrorInfo(error);
 
 	useEffect(() => {
 		if (limitExceeded) {
