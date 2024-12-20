@@ -1,0 +1,130 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.account {
+	&__header {
+		text-align: center;
+	}
+
+	&__info {
+		display: flex;
+
+		border-bottom: 1px solid $border-color;
+		padding-bottom: $article-margin;
+	}
+
+	.user-profile,
+	.user-status {
+		margin-top: 0;
+		border-radius: $block-border-radius;
+		padding: $article-margin;
+		background-color: $block-bg-color;
+	}
+
+	.user-profile {
+		&__buttons-inner {
+			margin-top: $main-margin;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			column-gap: 3rem;
+		}
+
+		.general-detail {
+			&__item {
+				grid-template-columns: minmax(auto, 7rem) minmax(10rem, 1fr);
+
+				&-value {
+					@include break-word();
+				}
+			}
+		}
+	}
+
+	.user-status {
+		.general-detail {
+			&__item {
+				grid-template-columns: minmax(auto, 17rem) minmax(5rem, 1fr);
+
+				&-value {
+					justify-self: center;
+				}
+			}
+		}
+
+		&__used-limit {
+			&.end-of-limit {
+				color: $danger-color;
+			}
+			&.close-to-limit {
+				color: $warning-color;
+			}
+			&.far-to-limit {
+				color: $success-color;
+			}
+		}
+	}
+
+	.user-favorites {
+		margin-top: $article-margin;
+
+		&__tab-menu {
+			display: flex;
+			column-gap: 2rem;
+			border-bottom: 1px solid $border-color;
+		}
+
+		&__tab-item {
+			padding: 1rem;
+			border: none;
+			border-radius: 1rem 1rem 0 0;
+			background-color: inherit;
+
+			transition: background-color $transition linear;
+
+			&.active {
+				background-color: $block-bg-color-light;
+				cursor: default;
+			}
+
+			&:not(.active) {
+				cursor: pointer;
+
+				&:hover {
+					background-color: $block-hover-bg-color;
+				}
+			}
+			@include font-h6;
+		}
+
+		&__list {
+			margin-top: $article-margin;
+		}
+	}
+
+	&:not(.mobile) {
+		.account {
+			&__info {
+				justify-content: center;
+				column-gap: 2rem;
+			}
+		}
+
+		.user-status {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+	}
+
+	&.mobile {
+		.account {
+			&__info {
+				flex-direction: column;
+				row-gap: $article-margin;
+				// justify-content: center;
+				// column-gap: 2rem;
+			}
+		}
+	}
+}

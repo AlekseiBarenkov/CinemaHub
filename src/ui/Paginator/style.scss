@@ -1,0 +1,30 @@
+@import '../../assets/styles/variables';
+
+.paginator {
+	background-color: $block-bg-color;
+
+	&__page-report {
+		color: var(--text-color);
+		user-select: none;
+		text-align: center;
+		width: 10rem;
+	}
+
+	&.tablet {
+		.paginator {
+			&__page-report {
+				display: none;
+			}
+		}
+	}
+
+	&.mobile {
+		.paginator {
+			&__page-report {
+				width: fit-content;
+				padding-left: 1rem;
+				padding-right: 1rem;
+			}
+		}
+	}
+}

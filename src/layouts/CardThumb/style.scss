@@ -1,0 +1,13 @@
+@import '../../assets/styles/variables';
+
+.card-thumb {
+	padding: $padding-min;
+	border-radius: 0.3rem;
+	border: none;
+	background-color: $block-bg-color-alfa;
+
+	&.button-thumb:focus-visible {
+		opacity: 1;
+		outline: 2px solid;
+	}
+}

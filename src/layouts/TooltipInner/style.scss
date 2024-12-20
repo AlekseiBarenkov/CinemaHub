@@ -1,0 +1,10 @@
+@import '../../assets/styles/variables';
+
+.tooltip {
+	display: flex;
+	align-items: center;
+
+	.p-tooltip-text {
+		background-color: $block-bg-color-light;
+	}
+}

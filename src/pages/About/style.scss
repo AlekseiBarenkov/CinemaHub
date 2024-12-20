@@ -1,0 +1,16 @@
+@import '../../assets/styles/mixins';
+
+.about {
+	&__link {
+		text-decoration: underline;
+		@include simple-link(false);
+	}
+
+	&.desktop {
+		.about {
+			&__link:hover {
+				@include simple-link(true);
+			}
+		}
+	}
+}

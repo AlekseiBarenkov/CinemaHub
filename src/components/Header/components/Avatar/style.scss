@@ -1,0 +1,58 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+$size: 3.5rem;
+.avatar {
+	height: $size;
+	width: 5rem;
+	display: flex;
+	justify-content: center;
+
+	&__ico {
+		color: inherit;
+		border-radius: 50%;
+		width: $size;
+
+		background-color: $block-bg-color;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		transition:
+			background-color $transition linear,
+			opacity $transition linear;
+
+		&.skeleton {
+			height: $size !important;
+			width: $size !important;
+		}
+		&--not-auth {
+			@include font-h6;
+			border-radius: $btn-border-radius;
+			width: 100%;
+
+			padding: $button-paddings;
+		}
+
+		i {
+			font-size: 1.5rem;
+		}
+
+		&--is-profile-location {
+			cursor: default;
+
+			background-color: $block-hover-bg-color;
+		}
+
+		@media (min-width: 768px) {
+			&:not(.avatar__ico--not-auth, .avatar__ico--is-profile-location, .skeleton):hover {
+				background-color: $block-hover-bg-color;
+			}
+
+			&.avatar__ico--not-auth:not(.avatar__ico--is-profile-location):hover {
+				opacity: $opacity;
+			}
+		}
+	}
+}

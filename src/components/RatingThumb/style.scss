@@ -1,0 +1,17 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.rating-thumb {
+	display: flex;
+	align-items: center;
+
+	&__star {
+		margin-right: 0.3rem;
+		width: 1.3rem;
+		height: 1.3rem;
+	}
+
+	&__value {
+		@include font-h9;
+	}
+}

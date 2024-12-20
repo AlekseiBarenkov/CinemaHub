@@ -1,0 +1,21 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.general-detail {
+	&__item {
+		display: grid;
+		grid-template-columns: minmax(auto, 18rem) minmax(10rem, 1fr);
+		align-items: start;
+
+		column-gap: 1rem;
+
+		&-title,
+		&-value {
+			@include font-h7;
+		}
+
+		&-title {
+			opacity: $opacity;
+		}
+	}
+}

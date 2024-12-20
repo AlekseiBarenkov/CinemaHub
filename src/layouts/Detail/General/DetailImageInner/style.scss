@@ -1,0 +1,10 @@
+@import '../../../../assets/styles/variables';
+
+.general-detail {
+	&__image-inner {
+		max-width: 22rem;
+		display: inline-block;
+		overflow: hidden;
+		border-radius: $block-border-radius;
+	}
+}

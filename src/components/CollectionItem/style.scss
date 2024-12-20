@@ -1,0 +1,62 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.collection-item {
+	padding: $main-padding;
+	display: flex;
+	align-items: center;
+
+	width: 100%;
+	border-radius: $block-border-radius;
+
+	&__img {
+		max-width: clamp(7rem, 20vw, 15rem);
+		width: 100%;
+		aspect-ratio: 16/9;
+		background-color: $block-bg-color;
+		border-radius: $block-border-radius;
+		margin-right: 1rem;
+	}
+
+	&__title {
+		@include font-h4;
+	}
+
+	&.desktop {
+		transition:
+			background-color $transition linear,
+			opacity $transition linear;
+
+		&:hover {
+			background-color: $block-hover-bg-color;
+
+			.collection-item__title {
+				opacity: 1;
+			}
+		}
+
+		.collection-item__title {
+			opacity: 0.8;
+		}
+	}
+
+	&:not(.desktop) {
+		padding: 0.5rem;
+	}
+
+	&.mobile {
+		&:active {
+			background-color: $block-hover-bg-color;
+		}
+
+		.collection-item {
+			&__img {
+				border-radius: calc($block-border-radius / 2);
+			}
+
+			&__title {
+				@include font-h5;
+			}
+		}
+	}
+}

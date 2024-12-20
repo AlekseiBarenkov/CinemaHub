@@ -1,0 +1,202 @@
+@import './normalize.scss';
+@import './fonts.scss';
+@import './variables.scss';
+@import './mixins';
+
+html {
+	font-size: 15px;
+
+	@media (max-width: $max-media-width-xl) {
+		font-size: 14px;
+	}
+	@media (max-width: $max-media-width-lg) {
+		font-size: 13px;
+	}
+	@media (max-width: $max-media-width-smd) {
+		font-size: 12px;
+	}
+	@media (max-width: $max-media-width-sm) {
+		font-size: 11px;
+	}
+}
+
+body {
+	font-family: Rubik;
+	font-weight: normal;
+	font-size: 1rem;
+
+	&,
+	& * {
+		color: white;
+	}
+
+	background-color: $main-bg-color;
+}
+
+a {
+	text-decoration: none;
+
+	&,
+	&:hover {
+		color: inherit;
+	}
+}
+
+button,
+a {
+	-webkit-tap-highlight-color: transparent;
+}
+
+p,
+ul {
+	margin: 0;
+	padding: 0;
+}
+li {
+	list-style-type: none;
+}
+
+h1,
+h2,
+h3 {
+	margin: 0;
+}
+h1 {
+	@include font-h1;
+}
+h2 {
+	@include font-h2;
+}
+
+h3 {
+	@include font-h4;
+}
+
+.bg-color {
+	@include colors($background: true);
+}
+
+.color {
+	@include colors($background: false);
+}
+
+.c-red {
+	color: $danger-color;
+}
+
+.poster-image-skeleton-inner {
+	aspect-ratio: $poster-aspect-ratio !important;
+
+	.skeleton {
+		height: 100% !important;
+	}
+}
+
+.active-thumb-wrapper {
+	&:hover {
+		.card-thumb {
+			opacity: 1;
+		}
+	}
+
+	&:focus-visible {
+		outline: 2px solid;
+		border-radius: inherit;
+	}
+}
+.input-item {
+	&__input {
+		width: 100%;
+
+		& .p-icon-field {
+			&,
+			& input {
+				width: 100%;
+			}
+		}
+	}
+
+	&:has(input:-internal-autofill-selected) {
+		.p-input-icon {
+			color: black;
+		}
+	}
+}
+
+.p-divider {
+	&-content {
+		background-color: $main-bg-color;
+	}
+}
+
+.p-float-label {
+	label {
+		color: white;
+		opacity: $opacity-2;
+	}
+
+	&:has(input:focus),
+	&:has(.p-inputwrapper-filled) {
+		label {
+			opacity: $opacity;
+		}
+	}
+}
+
+.workarea-content-paddings {
+	height: 100%;
+	padding: 0;
+}
+
+.p-toast-message {
+	.p-toast-detail {
+		white-space: pre-line;
+	}
+}
+
+.empty-message {
+	padding: 5rem 0;
+	@include font-h5;
+	opacity: $opacity;
+	text-align: center;
+}
+
+.custom-link {
+	display: inline-block;
+	@include underline(white);
+}
+
+.poster-image {
+	@include poster;
+}
+
+.skeleton {
+	background-color: $block-bg-color;
+	opacity: 1 !important;
+
+	&.poster {
+		height: auto !important;
+	}
+}
+
+@media (min-width: $max-media-width-md) {
+	body {
+		margin-left: calc(100vw - 100%);
+	}
+
+	*::-webkit-scrollbar {
+		width: 0.7rem;
+
+		&-track {
+			background: #2f2f2f1f;
+		}
+
+		&-thumb {
+			background: rgb(59 59 59 / 30%);
+		}
+
+		&-thumb:hover {
+			background: #2f77ca;
+		}
+	}
+}

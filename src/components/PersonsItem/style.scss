@@ -1,0 +1,71 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.person-item {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	padding: 0.5rem;
+
+	&__image {
+		position: relative;
+		width: 100%;
+		border-radius: 50%;
+		aspect-ratio: 1 / 1;
+		overflow: hidden;
+		background-color: $block-bg-color;
+
+		& > img {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 100%;
+			height: auto;
+			transform: translate(-50%, -50%);
+		}
+	}
+
+	&__name,
+	&__profession {
+		margin-top: 0.5rem;
+	}
+	&__name {
+		@include font-h8;
+		hyphens: auto;
+		-webkit-hyphens: auto;
+		-ms-hyphens: auto;
+		text-align: center;
+
+		opacity: $opacity;
+	}
+
+	&__profession {
+		opacity: $opacity-2;
+	}
+
+	@media (min-width: $max-media-width-lg) {
+		border-radius: $block-border-radius;
+
+		transition: background-color $transition linear;
+		cursor: pointer;
+
+		&__profession,
+		&__name {
+			transition: opacity $transition linear;
+		}
+
+		&:hover {
+			background-color: $block-bg-color;
+
+			.person-item {
+				&__profession,
+				&__name {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

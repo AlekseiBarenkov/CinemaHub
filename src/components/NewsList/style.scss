@@ -1,0 +1,65 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+$image-width: 20rem;
+$gap-size: 1rem;
+
+.news-list {
+	.news-item {
+		padding: $second-padding $main-padding;
+		display: flex;
+		align-items: stretch;
+
+		&:not(:last-child) {
+			border-bottom: 1px solid $border-color;
+		}
+		&__image {
+			max-width: $image-width;
+			width: 100%;
+			aspect-ratio: 16/9;
+			background-color: $block-bg-color;
+		}
+
+		&__title {
+			margin-bottom: $padding-min;
+
+			@include simple-link(false);
+			@include text-count-line(2);
+			&:hover {
+				@include simple-link(true);
+			}
+		}
+
+		&__date {
+			opacity: $opacity;
+		}
+
+		&__description {
+			margin-top: $main-padding;
+			@include font-h5;
+			@include text-count-line(3);
+		}
+	}
+
+	&:not(.mobile) {
+		.news-item {
+			column-gap: $gap-size;
+		}
+
+		.skeleton-item {
+			.news-item {
+				&__content {
+					flex-basis: calc(100% - $gap-size - $image-width);
+				}
+			}
+		}
+	}
+	&.mobile {
+		.news-item {
+			flex-direction: column;
+			align-items: center;
+
+			row-gap: $gap-size;
+		}
+	}
+}

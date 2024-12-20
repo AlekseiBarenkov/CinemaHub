@@ -1,0 +1,31 @@
+@import '../../assets/styles/variables';
+
+.main {
+	max-width: 1280px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+
+	&__top,
+	&__content,
+	&__bottom {
+		padding: $main-padding 1rem;
+	}
+
+	&__top,
+	&__bottom {
+		flex-shrink: 1;
+	}
+
+	&__top {
+		border-bottom: 1px solid $border-color;
+		background-color: $main-bg-color;
+		position: sticky;
+		top: 0;
+		z-index: 2;
+	}
+
+	&__content {
+		flex: 1 1 auto;
+	}
+}

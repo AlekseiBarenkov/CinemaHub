@@ -1,0 +1,36 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.not-found {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__title {
+		@include font-h1;
+		margin-bottom: 1rem;
+	}
+
+	&__text {
+		@include font-h2;
+		margin-bottom: 2rem;
+	}
+
+	&__link {
+		transition: letter-spacing $transition ease-out;
+
+		@include font-h4;
+		@include underline($light-blue-color);
+
+		&:hover {
+			letter-spacing: 0.01rem;
+		}
+
+		&,
+		&:active {
+			color: $light-blue-color;
+		}
+	}
+}

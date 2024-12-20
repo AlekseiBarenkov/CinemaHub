@@ -1,0 +1,183 @@
+@import './variables';
+
+@mixin colors($background: true) {
+	@if $background {
+		&-main {
+			background-color: $main-color;
+		}
+		&-secondary {
+			background-color: $secondary-color;
+		}
+		&-success {
+			background-color: $success-color;
+		}
+		&-warning {
+			background-color: $warning-color;
+		}
+		&-danger {
+			background-color: $danger-color;
+		}
+	} @else {
+		&-main {
+			color: $main-color;
+		}
+		&-secondary {
+			color: $secondary-color;
+		}
+		&-success {
+			color: $success-color;
+		}
+		&-warning {
+			color: $warning-color;
+		}
+		&-danger {
+			color: $danger-color;
+		}
+	}
+}
+
+@mixin underline($color) {
+	position: relative;
+	$top: calc(100% + 0.3rem);
+
+	&:after {
+		content: '';
+		width: 0px;
+		height: 2px;
+		position: absolute;
+		top: $top;
+		left: 0;
+		background: $color;
+		transition: width $transition ease-out;
+	}
+
+	&:hover:after {
+		width: 100%;
+	}
+
+	&:not(:hover):after {
+		right: 0;
+		left: auto;
+	}
+
+	&.active {
+		&:after {
+			width: 100%;
+		}
+
+		&::before {
+			content: '';
+			width: 0px;
+			height: 2px;
+			position: absolute;
+			top: $top;
+			left: 0;
+			background: $color;
+			transition: $transition ease-in;
+		}
+
+		&:hover:after {
+			display: none;
+		}
+
+		&:hover::before {
+			width: 100%;
+		}
+
+		&:not(:hover):before {
+			right: 0;
+			left: auto;
+		}
+	}
+}
+
+@mixin simple-link($hovered) {
+	transition: color $transition linear;
+
+	@if $hovered == true {
+		color: $light-blue-color;
+		text-decoration: none;
+	}
+}
+
+@mixin break-word() {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-word;
+}
+
+@mixin text-count-line($count) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $count;
+	line-clamp: $count;
+	-webkit-box-orient: vertical;
+	@include break-word();
+}
+
+@mixin poster {
+	width: 100%;
+	aspect-ratio: $poster-aspect-ratio;
+	border-radius: inherit;
+	background-color: $block-bg-color;
+}
+
+@mixin font-weight-1 {
+	font-weight: 400;
+}
+
+@mixin font-weight-2 {
+	font-weight: 500;
+}
+
+@mixin font-h1 {
+	@include font-weight-2;
+	font-size: 2.5rem;
+}
+
+@mixin font-h2 {
+	@include font-weight-2;
+	font-size: 2rem;
+}
+
+@mixin font-h3 {
+	@include font-weight-1;
+	font-size: 2.1rem;
+	line-height: 2rem;
+}
+
+@mixin font-h4 {
+	@include font-weight-2;
+	font-size: 1.6rem;
+	line-height: 2rem;
+}
+
+@mixin font-h5 {
+	@include font-weight-1;
+	font-size: 1.33rem;
+	line-height: 1.5rem;
+}
+@mixin font-h6 {
+	@include font-weight-2;
+	font-size: 1.2rem;
+	line-height: 1.5rem;
+}
+
+@mixin font-h7 {
+	@include font-weight-1;
+	font-size: 1.2rem;
+	line-height: 1.4rem;
+}
+
+@mixin font-h8 {
+	@include font-weight-1;
+	font-size: 1.06rem;
+	line-height: 1.4rem;
+}
+
+@mixin font-h9 {
+	@include font-weight-2;
+	font-size: 1.06rem;
+	line-height: 1.4rem;
+}

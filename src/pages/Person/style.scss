@@ -1,0 +1,19 @@
+@import '../../assets/styles/variables';
+
+.person {
+	.person-detail {
+		&__item {
+			grid-template-columns: 12rem 1fr;
+		}
+
+		.spouse {
+			&:not(:last-child) {
+				margin-bottom: 0.5rem;
+			}
+
+			span {
+				opacity: $opacity;
+			}
+		}
+	}
+}

@@ -1,0 +1,9 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.general-detail {
+	&__subtitle {
+		@include font-h5;
+		opacity: $opacity;
+	}
+}

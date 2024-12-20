@@ -1,0 +1,25 @@
+.movie-filters {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 1.5rem;
+
+	&__input {
+		width: 12rem !important;
+
+		&.skeleton {
+			height: 3rem !important;
+		}
+		.p-dropdown-label {
+			text-align: center;
+		}
+	}
+
+	&__panel {
+		.p-dropdown-item-label {
+			width: 100%;
+			text-align: center;
+		}
+	}
+}

@@ -1,0 +1,35 @@
+@import '../../assets/styles/variables';
+
+.header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 1rem;
+
+	&__burger {
+		color: inherit;
+		border: 0;
+
+		background-color: transparent;
+
+		display: none;
+
+		& > i {
+			font-size: 2rem;
+		}
+	}
+
+	&:not(.desktop) {
+		.header__burger {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+	}
+
+	&.mobile {
+		& > .logo {
+			display: none;
+		}
+	}
+}

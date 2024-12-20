@@ -1,0 +1,57 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.film-item {
+	display: block;
+	color: inherit;
+
+	&__poster-inner {
+		position: relative;
+		overflow: hidden;
+		border-radius: $block-border-radius;
+	}
+
+	&__premiere-date {
+		@include font-h9;
+	}
+
+	&__premiere-date,
+	&__rating-inner {
+		position: absolute;
+		z-index: 1;
+		right: $thumb-position;
+		bottom: $thumb-position;
+	}
+
+	&__poster {
+		transition: transform $transition linear;
+	}
+
+	&__title {
+		@include font-h6;
+
+		margin-top: 0.5rem;
+		opacity: 0.8;
+		transition: opacity $transition linear;
+		@include text-count-line(2);
+	}
+
+	&.desktop {
+		&:hover {
+			.film-item {
+				&__poster {
+					transform: scale(1.1);
+				}
+				&__title {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	&.tablet {
+		.film-item__premiere-date {
+			font-size: 0.8rem;
+		}
+	}
+}

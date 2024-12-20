@@ -1,0 +1,73 @@
+@import '../../assets/styles/variables';
+
+$ico-size-dt: 1.5rem;
+$ico-size-ndt: 2.5rem;
+
+.favorite-thumb {
+	&.p-absolute {
+		position: absolute;
+		z-index: 1;
+		top: $thumb-position;
+		right: $thumb-position;
+	}
+
+	padding: 0;
+
+	cursor: pointer;
+
+	&__tooltip-wrapper,
+	&__ico-inner {
+		display: flex;
+		align-items: center;
+	}
+
+	&__tooltip-wrapper {
+		padding: $padding-min;
+	}
+
+	&__title {
+		margin-left: 0.5rem;
+	}
+
+	&.disable {
+		background-color: $block-bg-color-light;
+		cursor: default;
+	}
+
+	&:not(.active) {
+		opacity: 0;
+	}
+
+	&.active,
+	&:not(.desktop) {
+		opacity: 1;
+	}
+
+	&.desktop {
+		transition:
+			background-color $transition linear,
+			opacity $transition linear;
+
+		.favorite-thumb {
+			&__ico {
+				width: $ico-size-dt;
+				height: $ico-size-dt;
+				font-size: $ico-size-dt;
+			}
+		}
+
+		&:hover {
+			background-color: $block-bg-color-light;
+		}
+	}
+
+	&:not(.desktop) {
+		.favorite-thumb {
+			&__ico {
+				width: $ico-size-ndt;
+				height: $ico-size-ndt;
+				font-size: $ico-size-ndt;
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.button {
+	padding: $button-paddings;
+	border: none;
+	border-radius: $btn-border-radius;
+	color: white;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 0.5rem;
+
+	cursor: pointer;
+
+	transition: opacity $transition linear;
+
+	&__label {
+		@include font-h8;
+	}
+
+	&:hover:not(:disabled) {
+		opacity: 0.8;
+	}
+
+	&:disabled {
+		cursor: unset;
+		opacity: 0.8;
+	}
+}

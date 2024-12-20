@@ -1,0 +1,21 @@
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/variables';
+
+.logo {
+	display: flex;
+	flex-direction: column;
+	align-items: start;
+
+	&__title,
+	&__img {
+		display: inline-block;
+	}
+
+	&__img {
+		height: 2rem;
+	}
+
+	&__title {
+		opacity: $opacity;
+	}
+}

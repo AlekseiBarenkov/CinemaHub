@@ -1,0 +1,45 @@
+$transition: 0.2s;
+$opacity: 0.8;
+$opacity-2: 0.6;
+$opacity-3: 0.4;
+$opacity-4: 0.2;
+$opacity-5: 0.1;
+$btn-border-radius: 0.5rem;
+$block-border-radius: 1rem;
+$input-margin-top: 1.5rem;
+$main-padding: 1.25rem;
+$main-margin: 1.5rem;
+$article-margin: 1rem;
+$second-padding: 0.75rem;
+$padding-min: 0.3rem;
+$button-paddings: $second-padding $main-padding;
+
+$poster-aspect-ratio: calc(0.667 / 1);
+
+$border-color: hsla(0, 0%, 100%, 0.16);
+$light-blue-color: #6366f1;
+$main-bg-color: #100e19;
+$tooltip-bg-color: #14111f;
+$block-bg-color: #1f1b2e;
+$block-bg-color-light: #2e2d2f;
+$block-bg-color-alfa: rgba(48, 48, 48, 0.5);
+$mask-bg-color: rgba(0, 0, 0, 0.5);
+$block-hover-bg-color: hsla(0, 0%, 100%, 0.24);
+
+$thumb-position: 1rem;
+
+$main-color: #06b6d4;
+$secondary-color: #64748b;
+$success-color: #22c55e;
+$warning-color: #f97316;
+$danger-color: #ef4444;
+
+$max-media-width-xl: 1199px;
+$max-media-width-lg: 991px;
+$max-media-width-md: 767px;
+$max-media-width-smd: 575px;
+$max-media-width-sm: 480px;
+$max-media-width-xs: 320px;
+
+$min-media-width-md: 768px;
+$min-media-width-sm: 481px;

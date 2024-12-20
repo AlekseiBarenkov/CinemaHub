@@ -1,0 +1,27 @@
+@import '../../../../assets/styles/variables';
+
+.videos-modal {
+	border: none;
+	border-radius: $block-border-radius;
+	box-shadow: none;
+	background-color: $mask-bg-color !important;
+	padding-bottom: 0;
+
+	&__content {
+		border-radius: inherit;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.video-player {
+		width: 50vw;
+	}
+
+	&:not(.desktop) {
+		.video-player {
+			width: 70vw;
+		}
+	}
+}

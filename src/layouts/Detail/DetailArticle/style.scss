@@ -1,0 +1,8 @@
+@import '../../../assets/styles/variables';
+
+.detail-box {
+	margin-top: $main-padding;
+	&__title {
+		margin-bottom: $article-margin;
+	}
+}

@@ -1,0 +1,10 @@
+@import '../../assets/styles/variables';
+@import '../../assets/styles/mixins';
+
+.gallery {
+	position: relative;
+
+	.movie-filters {
+		margin-bottom: $main-margin;
+	}
+}

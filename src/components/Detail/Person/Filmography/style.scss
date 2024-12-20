@@ -1,0 +1,30 @@
+@import '../../../../assets/styles/variables';
+
+.filmography {
+	margin-top: $article-margin;
+
+	&__grid {
+		display: grid;
+
+		grid-template-columns: repeat(2, 1fr);
+		gap: 1rem;
+	}
+
+	&.desktop {
+		.filmography-item {
+			transition: background-color $transition linear;
+
+			&:hover {
+				background-color: $block-hover-bg-color;
+			}
+		}
+	}
+
+	@media (max-width: $max-media-width-md) {
+		.filmography {
+			&__grid {
+				grid-template-columns: 1fr;
+			}
+		}
+	}
+}

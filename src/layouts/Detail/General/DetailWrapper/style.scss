@@ -1,0 +1,61 @@
+@import '../../../../assets/styles/variables';
+
+.general-detail {
+	display: flex;
+
+	&__image-inner {
+		width: 100%;
+	}
+
+	&__title {
+		margin-bottom: 0.5rem;
+	}
+
+	&__info-title {
+		margin-bottom: $article-margin;
+	}
+
+	&__item:not(:last-child) {
+		margin-bottom: $article-margin;
+	}
+
+	&.desktop {
+		gap: 2rem;
+
+		.general-detail {
+			&__detail-inner {
+				flex-basis: 100%;
+			}
+
+			&__info {
+				margin-top: 2rem;
+			}
+			&__subtitle {
+				max-width: 70%;
+			}
+		}
+	}
+
+	&:not(.desktop) {
+		align-items: center;
+		flex-direction: column;
+		gap: 1rem;
+
+		.general-detail {
+			&__detail-inner {
+				flex-basis: 100%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+			}
+
+			&__subtitle {
+				max-width: 100%;
+			}
+
+			&__info {
+				margin-top: $article-margin;
+			}
+		}
+	}
+}

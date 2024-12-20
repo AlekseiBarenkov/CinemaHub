@@ -1,0 +1,18 @@
+@import '../../assets/styles/mixins';
+
+.page-loader {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+
+	&__title {
+		@include font-h4;
+		margin-bottom: 1rem;
+	}
+
+	&__ico {
+		font-size: 2rem;
+	}
+}

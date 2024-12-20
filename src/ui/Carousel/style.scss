@@ -1,0 +1,56 @@
+@import '../../assets/styles/variables';
+
+$arrowSize: 2rem;
+$arrowInnerPadding: 0.4rem;
+$wrapperPadding: calc($arrowSize + 0.2rem + ($arrowInnerPadding * 2));
+
+.carousel {
+	padding-left: $wrapperPadding;
+	padding-right: $wrapperPadding;
+
+	&__item {
+		padding: 0.5rem;
+	}
+
+	&__arrow-inner {
+		padding: $arrowInnerPadding;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		opacity: $opacity-3;
+
+		transition:
+			opacity $transition linear,
+			background-color $transition linear;
+		border: none;
+		border-radius: 50%;
+		background-color: transparent;
+
+		&:not(.disabled) {
+			cursor: pointer;
+
+			&:hover {
+				opacity: 1;
+				background-color: $block-bg-color;
+			}
+		}
+
+		&.disabled {
+			display: none;
+		}
+
+		&.next {
+			right: -$wrapperPadding;
+		}
+		&.prev {
+			left: -$wrapperPadding;
+		}
+
+		.carousel-arrow {
+			font-size: $arrowSize;
+		}
+	}
+}

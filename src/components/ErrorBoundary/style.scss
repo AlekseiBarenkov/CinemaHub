@@ -1,0 +1,14 @@
+.error-boundary {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	&__img {
+		height: 30vh;
+	}
+
+	&__status,
+	&__message {
+		color: red;
+	}
+}

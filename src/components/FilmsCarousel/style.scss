@@ -1,0 +1,9 @@
+@import '../../assets/styles/mixins';
+
+.films-carousel {
+	.film-item {
+		&__title {
+			@include text-count-line(2);
+		}
+	}
+}

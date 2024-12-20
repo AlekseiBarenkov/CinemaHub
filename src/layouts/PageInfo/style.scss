@@ -1,0 +1,44 @@
+@import '../../assets/styles/mixins';
+@import '../../assets/styles/variables';
+
+.page-info {
+	&__header {
+		margin-bottom: $main-margin;
+	}
+
+	&__text,
+	&__text-list-item {
+		@include font-h7;
+	}
+
+	span {
+		@include font-weight-2;
+	}
+
+	&__text-inner {
+		.page-info {
+			&__text,
+			&__text-list-item {
+				&:not(:first-child) {
+					margin-top: 0.5rem;
+				}
+			}
+		}
+	}
+
+	&__title {
+		margin: $main-padding 0;
+		@include font-h4;
+	}
+
+	&__text-list {
+		margin: 0;
+		list-style: none;
+		padding-inline-start: $main-padding;
+
+		&-item::before {
+			content: '– ';
+			padding-right: 0.3rem;
+		}
+	}
+}

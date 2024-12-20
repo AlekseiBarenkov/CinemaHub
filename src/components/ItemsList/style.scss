@@ -1,0 +1,13 @@
+.movie-list {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	gap: 2rem;
+
+	&.tablet {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	&.mobile {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

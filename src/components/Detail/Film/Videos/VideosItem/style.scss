@@ -1,0 +1,88 @@
+@import '../../../../../assets/styles/variables';
+@import '../../../../../assets/styles/mixins';
+
+.videos-item {
+	&__image {
+		position: relative;
+		border-radius: $block-border-radius;
+		overflow: hidden;
+
+		&,
+		& > img {
+			width: 100%;
+		}
+
+		& > img {
+			background-color: $block-bg-color;
+			aspect-ratio: 4 / 3;
+		}
+	}
+
+	&__play-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		transform: translate(-50%, -50%);
+		opacity: 0;
+
+		i {
+			font-size: 3rem;
+		}
+	}
+
+	&__name {
+		margin-top: 0.3rem;
+
+		@include font-h8;
+		hyphens: auto;
+		-webkit-hyphens: auto;
+		-ms-hyphens: auto;
+
+		opacity: $opacity;
+	}
+
+	&.desktop {
+		cursor: pointer;
+
+		.videos-item {
+			&__name {
+				transition: opacity $transition linear;
+			}
+
+			&__image {
+				& > img {
+					transition:
+						transform $transition linear,
+						opacity $transition ease-out;
+				}
+			}
+			&__play-btn {
+				transition: opacity $transition linear;
+			}
+		}
+
+		&:hover {
+			.videos-item {
+				&__name {
+					opacity: 1;
+				}
+
+				&__image {
+					& > img {
+						transform: scale(1.1);
+						opacity: $opacity-4;
+					}
+				}
+
+				&__play-btn {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,11 @@
+@import '../../../../assets/styles/variables';
+@import '../../../../assets/styles/mixins';
+
+.film-description {
+	&__text {
+		margin-top: 0.5rem;
+		@include font-h7;
+
+		opacity: $opacity;
+	}
+}

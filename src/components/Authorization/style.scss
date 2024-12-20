@@ -1,0 +1,59 @@
+.auth {
+	display: flex;
+
+	&__card {
+		flex: 1 0 45%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	&__divider {
+		flex: 1 0 10%;
+
+		&-horizontal {
+			display: none;
+		}
+	}
+
+	&__modal {
+		&-header {
+			padding-bottom: 0;
+		}
+
+		&-content {
+			padding-left: 5rem;
+			padding-right: 5rem;
+		}
+
+		&.mobile {
+			.auth__modal-content {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+	}
+
+	&.mobile {
+		flex-direction: column;
+
+		.auth {
+			&__card {
+				flex: none;
+			}
+
+			&__divider {
+				flex: none;
+
+				&-vertical {
+					display: none;
+				}
+
+				&-horizontal {
+					display: flex;
+				}
+			}
+		}
+	}
+}

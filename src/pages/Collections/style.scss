@@ -1,0 +1,14 @@
+.collections {
+	max-width: 50rem;
+	margin: 0 auto;
+
+	.collection-item:not(:last-child) {
+		margin-bottom: 2rem;
+	}
+
+	&.tablet {
+		.collection-item:not(:last-child) {
+			margin-bottom: 1rem;
+		}
+	}
+}
