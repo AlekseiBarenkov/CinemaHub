@@ -1,6 +1,6 @@
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import ReactDOM from 'react-dom/client';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { addLocale } from 'primereact/api';
 
 import {
 	About,
@@ -16,8 +16,6 @@ import {
 
 import { ErrorBoundary } from './components/ErrorBoundary';
 import { Root } from './layouts/Root/Root';
-
-import { addLocale } from 'primereact/api';
 
 import { AuthProvider } from './context/providers/AuthProvider';
 import { DetailProvider } from './context/providers/DetailProvider';
@@ -36,15 +34,6 @@ import 'primereact/resources/themes/lara-dark-blue/theme.css';
 import './assets/styles/style.scss';
 
 addLocale('ru', PRlocaleOptions);
-
-export const queryClient = new QueryClient({
-	defaultOptions: {
-		queries: {
-			refetchOnWindowFocus: false,
-			gcTime: 0
-		}
-	}
-});
 
 const router = createBrowserRouter(
 	[
@@ -126,7 +115,5 @@ const router = createBrowserRouter(
 );
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-	<QueryClientProvider client={queryClient}>
-		<RouterProvider router={router} future={{ v7_startTransition: true }} />
-	</QueryClientProvider>
+	<RouterProvider router={router} future={{ v7_startTransition: true }} />
 );

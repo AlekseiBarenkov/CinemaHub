@@ -1,5 +1,6 @@
 import { FC, PropsWithChildren, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
 import { GalleryContext } from '../constants';
 
@@ -10,6 +11,15 @@ type TGalleryParams = {
 	[key in TRoutesParams['DIRECTION']]: TDirections;
 };
 
+const galleryQueryClient = new QueryClient({
+	defaultOptions: {
+		queries: {
+			refetchOnWindowFocus: false,
+			gcTime: 0
+		}
+	}
+});
+
 export const GalleryProvider: FC<PropsWithChildren> = ({ children }) => {
 	const { direction } = useParams<TGalleryParams>() as TGalleryParams;
 
@@ -19,7 +29,7 @@ export const GalleryProvider: FC<PropsWithChildren> = ({ children }) => {
 
 	return (
 		<GalleryContext.Provider value={{ direction: directionMemo }}>
-			{children}
+			<QueryClientProvider client={galleryQueryClient}>{children}</QueryClientProvider>
 		</GalleryContext.Provider>
 	);
 };
